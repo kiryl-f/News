@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="news"
+            type="com.myapps.news.Results"/>
+    </data>
+
+    <RelativeLayout
+        android:id="@+id/newsLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <ImageView
+            android:id="@+id/newsImageView"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginStart="20dp"
+            android:src="@android:color/darker_gray"/>
+        <TextView
+            android:id="@+id/newsTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="30sp"
+            tools:text="News text"
+            android:layout_alignEnd="@id/newsImageView"
+            android:layout_alignStart="@id/newsImageView"
+            android:textColor="@android:color/black"
+            android:layout_below="@id/newsImageView"
+            android:text="@{news.webTitle}"
+            android:gravity="center"/>
+        <TextView
+            android:id="@+id/topicTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/black"
+            android:layout_below="@id/newsTextView"
+            android:textSize="25sp"
+            android:layout_marginStart="20dp"
+            android:text="@{news.sectionName}"
+            tools:text="Topic"/>
+        <TextView
+            android:id="@+id/dateTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/newsTextView"
+            android:layout_alignEnd="@id/newsTextView"
+            android:layout_marginEnd="20dp"
+            android:textSize="25sp"
+            android:textColor="@android:color/black"
+            android:text="@{news.webPublicationDate.substring(0, 10)}"
+            tools:text="01/01/1970"
+            />
+    </RelativeLayout>
+</layout>
